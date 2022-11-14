@@ -2,44 +2,6 @@ import random
 import numpy as np
 
 
-# def ramificacion_y_poda(tabla:np.ndarray, N:int, mejor_asignacion:np.ndarray=None, asignacion_actual:np.ndarray=None, paso_actual=0):
-    
-#     if mejor_asignacion is None:
-#         mejor_asignacion = np.empty(N, dtype=int)
-#         for i in range(N):
-#             mejor_asignacion[i] = i
-    
-#     if asignacion_actual is None:
-#         asignacion_actual = np.ndarray(N, dtype=int)
-#         asignacion_actual.fill(-1)
-
-#     if paso_actual == N:
-#         mejor_tiempo = 0
-#         tiempo_actual = 0
-#         for i in range(N):
-#             mejor_tiempo += tabla[i][mejor_asignacion[i]]
-#             tiempo_actual += tabla[i][asignacion_actual[i]]
-
-#         if tiempo_actual < mejor_tiempo:
-#             for i in range(N):
-#                 mejor_asignacion[i] = asignacion_actual[i]
-    
-#     else:
-#         for i in range(N):
-#             if i not in asignacion_actual:
-#                 asignacion_actual[paso_actual] = i
-#                 mejor_tiempo = 0
-#                 tiempo_actual = 0
-#                 for j in range(N):
-#                     mejor_tiempo += tabla[j][mejor_asignacion[j]]
-#                 for j in range(paso_actual+1):
-#                     tiempo_actual += tabla[j][asignacion_actual[j]]
-                
-#                 if tiempo_actual < mejor_tiempo:
-#                     ramificacion_y_poda(tabla=tabla, N=N, mejor_asignacion=mejor_asignacion, asignacion_actual=asignacion_actual,paso_actual=paso_actual+1)
-                
-#                 asignacion_actual[paso_actual] = -1
-
 
 def backtracking(tabla:np.ndarray, asignacion_actual:np.ndarray, N:int, paso=0, mejor_asignacion = None):
     if mejor_asignacion is None:
